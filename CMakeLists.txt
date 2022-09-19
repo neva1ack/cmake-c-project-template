@@ -16,5 +16,5 @@ file(MAKE_DIRECTORY "${PROJECT_SOURCE_DIR}/build")
 set(CMAKE_EXPORT_COMPILE_COMMANDS 1)
 # create executable from src/
 include_directories("${PROJECT_SOURCE_DIR}/include")
-file(GLOB PROJECT_GLOBBED_SOURCES "${PROJECT_SOURCE_DIR}/src/*.c")
-add_executable(${PROJECT_NAME} ${PROJECT_GLOBBED_SOURCES})
+file(GLOB_RECURSE "${PROJECT_NAME}_SOURCES" "${PROJECT_SOURCE_DIR}/src/*.c")
+add_executable(${PROJECT_NAME} ${${PROJECT_NAME}_SOURCES})
