@@ -11,10 +11,10 @@ set(CMAKE_C_STANDARD_REQUIRED ON)
 # set release build
 set(CMAKE_BUILD_TYPE Release)
 # create build dir
-file(MAKE_DIRECTORY build)
+file(MAKE_DIRECTORY "${PROJECT_SOURCE_DIR}/build")
 # generate compile_commands.json
 set(CMAKE_EXPORT_COMPILE_COMMANDS 1)
 # create executable from src/
-include_directories(${PROJECT_SOURCE_DIR}/include)
-file(GLOB PROJECT_GLOBBED_SOURCES ${PROJECT_SOURCE_DIR}/src/*.c)
+include_directories("${PROJECT_SOURCE_DIR}/include")
+file(GLOB PROJECT_GLOBBED_SOURCES "${PROJECT_SOURCE_DIR}/src/*.c")
 add_executable(${PROJECT_NAME} ${PROJECT_GLOBBED_SOURCES})
